@@ -26,6 +26,7 @@ export function ReminderItem({
       }
       onLongPress={onLongPress}>
       <Checkbox
+        testID="checkbox"
         size={24}
         disableText
         useBuiltInState={false}
