@@ -29,12 +29,14 @@ export default function AddReminderLayout() {
       reminderInfo.creationDate = new Date();
       reminderInfo.id = remindersRef.current.length;
 
-      storage.setItem('reminders', [
-        ...remindersRef.current,
-        reminderInfo as Reminder,
-      ]);
-
-      navigator.goBack();
+      storage
+        .setItem('reminders', [
+          ...remindersRef.current,
+          reminderInfo as Reminder,
+        ])
+        .then(() => {
+          navigator.goBack();
+        });
     }
   };
 

@@ -19,7 +19,6 @@ export function ReminderItem({
   const colorScheme = useColorScheme();
   return (
     <Pressable
-      key={item.title.replace(/\s+/g, '_')}
       style={
         colorScheme === 'light'
           ? styles.reminderContainer

@@ -28,8 +28,10 @@ export default function Reminders() {
     <FlatList
       style={colorScheme === 'light' ? styles.listStyle : styles.listStyleDark}
       data={reminders}
-      renderItem={({item}) => (
+      keyExtractor={item => item.creationDate.toString()}
+      renderItem={({item, index}) => (
         <ReminderItem
+          key={index}
           item={item}
           selected={item.completed}
           onCheck={() => onCheckItem(item)}
